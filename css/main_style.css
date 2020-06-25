@@ -1,0 +1,13 @@
+.add_quiz{
+    display: flex;
+    justify-content: flex-end;
+}
+.head_quiz{
+    display: flex;
+    justify-content: space-between;
+}
+.form_make{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
