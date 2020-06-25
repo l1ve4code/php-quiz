@@ -1,5 +1,6 @@
 <?php
     session_start();
+    unset($_SESSION['test']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,16 +30,12 @@
             <form class="form-inline justify-content-space-between w-15">
                 <?php
                     if(isset($_SESSION["user"])){
-                        $if_admin = "";
-                        if($_SESSION["user"]["privilege"] == 'admin'){
-                            $if_admin = '<a class="dropdown-item" href="admin/admin.php">Админ-панель</a>';
-                        }
                         echo ' <ul class = "navbar-nav"><li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   '.$_SESSION["user"]["full_name"].'
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  '.$if_admin.'
+                            
                                   <a class="dropdown-item" href="#">Настройки</a>
                                   <div class="dropdown-divider"></div>
                                   <a class="dropdown-item" href="includes/logout.php">Выход</a>
@@ -49,9 +46,6 @@
                         echo '<ul class="navbar-nav">
                                 <li class="nav-item active">
                                     <a class="nav-link" href="login.php">Авторизация</a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="register.php">Регистрация</a>
                                 </li>
                             </ul>';
                     }
@@ -65,6 +59,29 @@
         </div>
     </main>
     <footer>
+        <?php
+          require_once "includes/connect.php";
+          $memas = mysqli_query($connect, "SELECT * FROM `polls`");
+          if(mysqli_num_rows($memas) > 0 and isset($_SESSION['user'])){
+//              $users = mysqli_fetch_assoc($memas);
+            while($users = mysqli_fetch_assoc($memas)){
+                echo "<h2>ОПРОС:".$users['title']."</h2>";
+                $title = $users["title"];
+                $dop = mysqli_query($connect, "SELECT * FROM `answ` WHERE title = '$title';");
+                echo "Вопросы: ";
+                echo $users['exiter'];
+                echo "<h5>Ответы людей(а может и нет):</h5>";
+                while($text = mysqli_fetch_assoc($dop)){
+                    $answ = $text['answers'];
+                    $exp_answ = explode(",", $answ);
+                    for($kek=0;$kek< count($exp_answ) - 2; $kek++){
+                        echo "<p>".$exp_answ[$kek]."</p>";
+                    }
+                    echo "____________________";
+                }
+            }
+          }
+        ?>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -12,10 +12,10 @@
             $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
             $string2 = $string2."chislo"." ";
         }
-        else if($_POST['mem'] == "pol_chislo"){
+        else if($_POST['mem'] == "pol_chilo"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'number' min = '0' name = 'info".$i."'></div>";
             $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
-            $string2 = $string2."pol_chislo"." ";
+            $string2 = $string2."pol_chilo"." ";
         }
         else if($_POST['mem'] == "string"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'text' minlength='1' maxlength = '30' name = 'info".$i."'></div>";

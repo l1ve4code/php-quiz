@@ -24,7 +24,7 @@
                                         <input type='text' name = 'naming$id' id = 'naming$id'>
                                         <select name = 'mem'>
                                             <option value='chislo'>Число</option>
-                                            <option value='pol_chislo'>Положительное число</option>
+                                            <option value='pol_chilo'>Положительное число</option>
                                             <option value='string'>Строка</option>
                                             <option value='text'>Текст</option>
                                             <option value='ed_vibor'>С единственным выбором </option>

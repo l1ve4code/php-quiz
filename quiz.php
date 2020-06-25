@@ -25,7 +25,7 @@
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'number' name = 'info".$i."' required></div>";
             }
-            else if($type_text[$i] == "pol_chislo"){
+            else if($type_text[$i] == "pol_chilo"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'number' min = '0' name = 'info".$i."' required></div>";
             }

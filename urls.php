@@ -4,4 +4,5 @@
     echo "<a href = '../quiz.php/?url=".$_SESSION['urls']['url2']."'>Ссылка 2</a><br>";
     echo "<a href = '../quiz.php/?url=".$_SESSION['urls']['url3']."'>Ссылка 3</a><br>";
     echo "<a href = '../index.php'>На главную!</a>"
+    unset($_SESSION['test']);
 ?>

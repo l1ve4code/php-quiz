@@ -28,8 +28,8 @@
         </div>
         <button type="submit" class="btn btn-primary">Войти</button>
         <div class="">
-            <label class="form-check-label" for="exampleCheck1"> -- У вас не пароля? </label>
-            <a href = "register.php">Регистрация</a>
+            <label class="form-check-label" for="exampleCheck1"> -- Вернуться на главную </label>
+            <a href = "index.php">Главная</a>
         </div>
         <p><?php
             echo $_SESSION['message'];

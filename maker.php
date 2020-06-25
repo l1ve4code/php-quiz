@@ -29,13 +29,10 @@
                 <input type="text" required name = "quiz_name" id = "quiz_name">
             </div>
             <?php
-//             unset($_SESSION['test']);
                 if(isset($_SESSION['test'])){
                     for($i=0; $i < count($_SESSION['test']['tests']); $i++){
                         echo $_SESSION['test']['tests'][array_keys($_SESSION['test']['tests'])[$i]];
-
                     }
-                    print_r($_SESSION['test']['all_ids']);
                 }
             ?>
             <a href = "add.php">Добавить поле</a>
