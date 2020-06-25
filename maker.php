@@ -2,10 +2,10 @@
     session_start();
     if($_SESSION['user']){
         if($_SESSION['user']['privilege'] != "admin"){
-            header('Location: ../index.php');
+            header('Location: /index.php');
         }
     }else{
-        header('Location: ../index.php');
+        header('Location: /index.php');
     }
 ?>
 <!doctype html>

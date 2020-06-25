@@ -7,34 +7,34 @@
     $string2 = "";
 
     for($i=0; $i < count($_SESSION['test']['all_ids']); $i++){
-        if($_POST['mem'] == "chislo"){
+        if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "chislo"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'number' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."chislo"." ";
         }
-        else if($_POST['mem'] == "pol_chilo"){
+        else if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "pol_chilo"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'number' min = '0' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."pol_chilo"." ";
         }
-        else if($_POST['mem'] == "string"){
+        else if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "string"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'text' minlength='1' maxlength = '30' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."string"." ";
         }
-        else if($_POST['mem'] == "text"){
+        else if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "text"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'text' minlength='1' maxlength = '255' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."text"." ";
         }
-        else if($_POST['mem'] == "ed_vibor"){
+        else if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "ed_vibor"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'text' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."ed_vibor"." ";
         }
-        else if($_POST['mem'] == "eb_monz"){
+        else if($_POST['mem'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]] == "eb_monz"){
 //            $string = $string."<div class = 'fields'><p>".$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]."</p><input type = 'text' name = 'info".$i."'></div>";
-            $string1 = $string1.$_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]]." ";
+            $string1 = $string1.str_replace(" ", "_", $_POST['naming'.$_SESSION['test']['all_ids'][array_keys($_SESSION['test']['all_ids'])[$i]]])." ";
             $string2 = $string2."eb_monz"." ";
         }
     }
@@ -49,5 +49,5 @@ mysqli_query($connect, "INSERT INTO `polls` (`id`, `title`, `exiter`, `value_pol
         'url3' => $time3,
 
     ];
-    header('Location: ../urls.php');
+    header('Location: /urls.php');
 ?>

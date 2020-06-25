@@ -14,5 +14,5 @@
     }
     $_SESSION['test']['tests'] = $kek;
     $_SESSION['test']['all_ids'] = $ek;
-    header('Location: ../maker.php');
+    header('Location: /maker.php');
 ?>

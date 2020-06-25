@@ -22,7 +22,7 @@
         array_push($array, "<div class = 'fields'>
                                         <label for = 'naming$id'>Название поля</label>
                                         <input type='text' name = 'naming$id' id = 'naming$id'>
-                                        <select name = 'mem'>
+                                        <select name = 'mem$id'>
                                             <option value='chislo'>Число</option>
                                             <option value='pol_chilo'>Положительное число</option>
                                             <option value='string'>Строка</option>

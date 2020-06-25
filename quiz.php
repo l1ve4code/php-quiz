@@ -20,30 +20,36 @@
         ];
         $type_text = explode(" ", $info['value_pole']);
         echo "<h3>Опрос: $title</h3><form action = '../register_anse.php' method='post' class = 'form_make'>";
-        for($i=0; $i < count($string_name); $i++){
+        for($i=0; $i < count($type_text); $i++){
             if($type_text[$i] == "chislo"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'number' name = 'info".$i."' required></div>";
+                continue;
             }
             else if($type_text[$i] == "pol_chilo"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'number' min = '0' name = 'info".$i."' required></div>";
+                continue;
             }
             else if($type_text[$i] == "string"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'text' minlength='1' maxlength = '30' name = 'info".$i."' required></div>";
+                continue;
             }
             else if($type_text[$i] == "text"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'text' minlength='1' maxlength = '255' name = 'info".$i."' required></div>";
+                continue;
             }
             else if($type_text[$i] == "ed_vibor"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'text' name = 'info".$i."' required></div>";
+                continue;
             }
             else if($type_text[$i] == "eb_monz"){
                 echo "<div><p>".$string_name[$i]."</p>";
                 echo "<input type = 'text' name = 'info".$i."' required></div>";
+                continue;
             }
         }
         echo "<button type  = 'submit'>Отправить</button></form>";
