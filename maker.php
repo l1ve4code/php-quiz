@@ -23,12 +23,21 @@
         <a href="index.php">Вернуться на главную страницу</a>
     </header>
     <main>
-        <form action="" method="" class = "form_make">
+        <form action="data_form.php" method="post" class = "form_make">
             <div>
                 <label for="quiz_name">Название опроса</label>
-                <input type="text" name = "quiz_name" id = "quiz_name">
+                <input type="text" required name = "quiz_name" id = "quiz_name">
             </div>
-            <a href = "#">Добавить поле</a>
+            <?php
+//              unset($_SESSION['test']);
+                if(isset($_SESSION['test'])){
+                    for($i=0; $i < count($_SESSION['test']['tests']); $i++){
+                        echo $_SESSION['test']['tests'][array_keys($_SESSION['test']['tests'])[$i]];
+                    }
+                }
+            ?>
+            <a href = "add.php">Добавить поле</a>
+            <button type = "submit">Создать форму</button>
         </form>
     </main>
 </body>
